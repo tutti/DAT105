@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
     cout << "List is empty after adding elements: " << list.isEmpty() << endl;
     cout << "Now removing 4, 5 and 6." << endl;
 
-    list.remove(4);
-    list.remove(5);
-    list.remove(6);
+    delete list.remove(4);
+    delete list.remove(5);
+    delete list.remove(6);
 
     cout << "First element: " << list.first()->getData() << endl;
     cout << "Last element: " << list.last()->getData() << endl;
@@ -31,16 +31,24 @@ int main(int argc, char *argv[])
         cout << "List contains " << i << ": " << list.contains(i) << endl;
     }
 
-    cout << "Removing last element: " << list.removeLast()->getData() << endl;
-    cout << "Removing first element: " << list.removeFirst()->getData() << endl;
+    DoublyLinkedNode* last = list.removeLast();
+    DoublyLinkedNode* first = list.removeFirst();
+
+    cout << "Removing last element: " << last->getData() << endl;
+    cout << "Removing first element: " << first->getData() << endl;
     cout << "List size: " << list.size() << endl;
+
+    delete last;
+    delete first;
 
     cout << "Removing remaining elements from list:";
 
     int size = list.size();
 
     for (int i = 0; i < size; ++i) {
-        cout << " " << list.removeFirst()->getData();
+        first = list.removeFirst();
+        cout << " " << first->getData();
+        delete first;
     }
 
     cout << endl;
