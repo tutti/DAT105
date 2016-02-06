@@ -1,5 +1,5 @@
 #include <iostream>
-#include "rolldice_ref.h"
+#include "rolldice_pnt.h"
 
 using namespace std;
 
