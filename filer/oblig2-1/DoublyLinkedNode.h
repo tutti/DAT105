@@ -39,7 +39,7 @@ class DoublyLinkedNode {
         void setNext(DoublyLinkedNode<T>* next) {
             this->next = next;
         }
-    private:
+    protected:
         T* data;
         DoublyLinkedNode<T>* previous;
         DoublyLinkedNode<T>* next;

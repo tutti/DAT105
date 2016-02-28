@@ -19,6 +19,10 @@ class DoublyLinkedListADT
         virtual bool contains(T* t) const = 0;
         virtual bool isEmpty() const = 0;
         virtual int size() const = 0;
+    /*protected:
+        DoublyLinkedNode<T>* head;
+        DoublyLinkedNode<T>* tail;
+        int elementCount;*/
 };
 
 #endif

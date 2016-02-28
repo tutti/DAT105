@@ -20,6 +20,7 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
             if (head == nullptr) {
                 head = node;
                 tail = node;
+                ++elementCount;
                 return;
             }
 
@@ -146,7 +147,7 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
         int size() const {
             return elementCount;
         }
-    private:
+    protected:
         DoublyLinkedNode<T>* head;
         DoublyLinkedNode<T>* tail;
         int elementCount;

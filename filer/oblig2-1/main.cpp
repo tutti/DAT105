@@ -1,5 +1,5 @@
 #include <iostream>
-#include "DoublyLinkedList.h"
+#include "SortedDoublyLinkedList.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main() {
     cout << *testint2 << endl;
     */
 
-    DoublyLinkedList<int>* list = new DoublyLinkedList<int>();
+    DoublyLinkedList<int>* list = new SortedDoublyLinkedList<int>();
     list->add(new int(5));
     list->add(new int(3));
     list->add(new int(4));
