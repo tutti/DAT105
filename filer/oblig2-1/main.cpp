@@ -1,18 +1,10 @@
 #include <iostream>
+#include "DoublyLinkedList.h"
 #include "SortedDoublyLinkedList.h"
 
 using namespace std;
 
 int main() {
-
-    /*
-    int* testint = new int(5);
-    DoublyLinkedNode<int>* test = new DoublyLinkedNode<int>(testint);
-
-    int* testint2 = test->getData();
-
-    cout << *testint2 << endl;
-    */
 
     DoublyLinkedList<int>* list = new SortedDoublyLinkedList<int>();
     list->add(new int(5));

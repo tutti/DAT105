@@ -9,7 +9,6 @@ template <class T>
 class DoublyLinkedListADT
 {
     public:
-        virtual void add(T* t) = 0;
         virtual DoublyLinkedNode<T>* removeFirst() = 0;
         virtual DoublyLinkedNode<T>* removeLast() = 0;
         virtual DoublyLinkedNode<T>* find(T* t) const = 0;

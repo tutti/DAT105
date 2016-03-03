@@ -14,7 +14,17 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
             tail = nullptr;
             elementCount = 0;
         }
-        void add(T* t) {
+
+        ~DoublyLinkedList() {
+            DoublyLinkedNode<T>* node = head;
+            while (head != nullptr) {
+                node = head->getNext();
+                delete head;
+                head = node;
+            }
+        }
+
+        virtual void add(T* t) {
             DoublyLinkedNode<T>* node = new DoublyLinkedNode<T>(t);
 
             if (head == nullptr) {
@@ -29,6 +39,7 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
             tail = node;
             ++elementCount;
         }
+
         DoublyLinkedNode<T>* removeFirst() {
             // If there are no elements, return nothing.
             if (head == nullptr) {
@@ -59,6 +70,7 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
             --elementCount;
             return first;
         }
+
         DoublyLinkedNode<T>* removeLast() {
             // If there are no elements, return nothing.
             if (tail == nullptr) {
@@ -89,6 +101,7 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
             --elementCount;
             return last;
         }
+
         DoublyLinkedNode<T>* find(T* t) const {
             if (head == nullptr) {
                 return nullptr;
@@ -101,6 +114,7 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
 
             return check;
         }
+
         DoublyLinkedNode<T>* remove(T* t) {
             // Look for the node first
             DoublyLinkedNode<T>* found = this->find(t);
@@ -131,19 +145,24 @@ class DoublyLinkedList : public DoublyLinkedListADT<T> {
             --elementCount;
             return found;
         }
+
         DoublyLinkedNode<T>* first() const {
             return head;
         }
+
         DoublyLinkedNode<T>* last() const {
             return tail;
         }
+
         bool contains(T* t) const {
             DoublyLinkedNode<T>* found = this->find(t);
             return (found != nullptr);
         }
+
         bool isEmpty() const {
             return (elementCount == 0);
         }
+
         int size() const {
             return elementCount;
         }
